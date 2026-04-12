@@ -1,0 +1,159 @@
+:root {
+  --bg: #F5F0E8;
+  --text: #5D4E3A;
+  --heading: #8B7355;
+  --accent: #D2691E;
+  --green: #A8BFA3;
+  --shadow: 0 6px 12px rgba(139,115,85,0.15);
+  --radius: 12px;
+  --content-width: 1440px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Lato, sans-serif;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(245,240,232,0.9), rgba(168,191,163,0.7)),
+    url('/images/hero-akwarela.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: var(--heading);
+  font-family: Lora, serif;
+  margin-top: 16px;
+  font-size: 2.5rem;
+}
+
+.menu {
+  background: var(--bg);
+  padding: 20px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(93,78,58,0.15);
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 32px 20px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 280px;
+  background: #f1eadf;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar h3 {
+  color: var(--heading);
+  font-family: Lora, serif;
+  margin-top: 0;
+}
+
+.sidebar a {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+  margin: 6px 10px 6px 0;
+}
+
+.main-content {
+  flex: 3;
+  min-width: 0;
+}
+
+.post-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.post-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.post-card h2 {
+  color: var(--heading);
+  font-family: Lora, serif;
+  margin-top: 0;
+}
+
+.post-card .meta {
+  color: var(--text);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.post-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer {
+  background: var(--text);
+  color: var(--bg);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: none;
+    width: 100%;
+    position: static;
+    order: -1;
+  }
+
+  .post-card img {
+    float: none;
+    margin: 0 0 16px 0;
+  }
+}
+

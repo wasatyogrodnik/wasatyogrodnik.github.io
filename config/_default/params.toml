@@ -1,6 +1,6 @@
 mainSections = ["posts"]
 
 [homepage]
-layout = "page"
-showRecent = true
-recentLimit = 6
+  layout = "custom"
+  showRecent = true
+  recentLimit = 6

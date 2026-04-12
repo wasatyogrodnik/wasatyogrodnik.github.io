@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <section class="wo-page wo-page--list">
+    <div class="wo-content-card">
+      <header class="wo-article-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+          <div class="wo-list-intro">{{ . }}</div>
+        {{ end }}
+      </header>
+
+      <div class="wo-card-grid">
+        {{ range .Pages }}
+          <article class="wo-post-card">
+            <a href="{{ .RelPermalink }}">
+              <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ .Title }}" class="wo-post-card__thumb">
+            </a>
+            <div class="wo-post-card__body">
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{ if .Date }}
+                <p class="wo-post-card__meta">{{ .Date.Format "2 January 2006" }}</p>
+              {{ end }}
+              <p>{{ .Summary | plainify | truncate 140 }}</p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

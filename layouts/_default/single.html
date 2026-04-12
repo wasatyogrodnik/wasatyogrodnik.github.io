@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="wo-page wo-page--single">
+    <article class="wo-content-card">
+      <header class="wo-article-header">
+        <h1>{{ .Title }}</h1>
+        {{ if .Date }}
+          <p class="wo-article-meta">{{ .Date.Format "2 January 2006" }}</p>
+        {{ end }}
+      </header>
+
+      <div class="wo-article-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </section>
+{{ end }}

@@ -1,0 +1,37 @@
+
+
+<section class="wo-hero">
+  <div class="wo-hero__overlay">
+    <img src="/images/branding/logo-wasaty-ogrodnik-full.png" alt="Wąsaty Ogrodnik" class="wo-logo">
+    <h1 class="wo-hero__title">Wąsaty Ogrodnik</h1>
+    <p class="wo-hero__tagline">Wpisy z działki wąsatego ogrodnika</p>
+  </div>
+</section>
+
+<section class="wo-home-intro">
+  <div class="wo-home-intro__inner">
+    <img src="/images/branding/avatar-wasaty-ogrodnik.png" alt="Avatar Wąsatego Ogrodnika" class="wo-avatar">
+    <div>
+      <h2>O blogu</h2>
+      <p>O działce, kompoście, warzywach, ogrodzie i codziennym życiu między grządką a konewką.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wo-home-posts">
+  <h2>Ostatnie z grządki</h2>
+  <div class="wo-card-grid">
+    {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+      <article class="wo-post-card">
+        <a href="{{ .RelPermalink }}">
+          <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ .Title }}" class="wo-post-card__thumb">
+        </a>
+        <div class="wo-post-card__body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="wo-post-card__meta">{{ .Date.Format "2 January 2006" }}</p>
+          <p>{{ .Summary | plainify | truncate 140 }}</p>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>

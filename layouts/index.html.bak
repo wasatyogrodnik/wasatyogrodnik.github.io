@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<div class="hero">
+  <img src="/images/logo.png" alt="Wąsaty Ogrodnik" class="logo">
+  <h1>Wpisy z działki przez płot</h1>
+</div>
+
+<nav class="menu">
+  <a href="/">🏠 Start</a>
+  <a href="/posts/">🛠️ Blog</a>
+  <a href="/galeria/">📸 Galeria</a>
+  <a href="/o-mnie/">👨 O mnie</a>
+</nav>
+
+<div class="content">
+  <aside class="sidebar">
+    <h3>Tagi</h3>
+    <a href="/tags/kompost/">kompost</a>
+    <a href="/tags/rod/">ROD</a>
+    <a href="/tags/dzialka/">działka</a>
+    <a href="/tags/koty/">koty</a>
+  </aside>
+
+  <main class="main-content">
+    {{ range first 5 (where site.RegularPages "Section" "posts") }}
+    <div class="post-card">
+      <img src="/images/mini1.jpg" alt="{{ .Title }}">
+      <h2>{{ .Title }}</h2>
+      <p class="meta">{{ .Date.Format "02.01.2006" }} | Wąsaty Ogrodnik</p>
+      <p>{{ .Summary }}</p>
+      <a href="{{ .RelPermalink }}">Czytaj więcej →</a>
+    </div>
+    {{ end }}
+  </main>
+</div>
+
+<footer>
+  © 2026 Wąsaty Ogrodnik | ROD Konin
+</footer>
+
+{{ end }}
