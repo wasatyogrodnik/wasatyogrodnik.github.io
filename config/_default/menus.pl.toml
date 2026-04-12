@@ -1,0 +1,14 @@
+[[main]]
+name = "Start"
+pageRef = "/"
+weight = 10
+
+[[main]]
+name = "Blog"
+pageRef = "posts"
+weight = 20
+
+[[main]]
+name = "Galeria"
+pageRef = "galeria"
+weight = 30

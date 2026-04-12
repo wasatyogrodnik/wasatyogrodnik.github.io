@@ -1,0 +1,15 @@
+baseURL = "https://wasatyogrodnik.github.io/"
+languageCode = "pl-pl"
+title = "Wasaty Ogrodnik"
+theme = "congo"
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+  defaultTheme = "auto"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
