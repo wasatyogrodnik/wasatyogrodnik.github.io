@@ -1,13 +1,9 @@
-baseURL = "https://wasatyogrodnik.github.io/"
-languageCode = "pl-pl"
-title = "Wasaty Ogrodnik"
 theme = "congo"
+baseURL = "https://wasatyogrodnik.github.io/"
+defaultContentLanguage = "pl"
 
 [outputs]
 home = ["HTML", "RSS"]
-
-[params]
-  defaultTheme = "auto"
 
 [markup]
   [markup.goldmark]

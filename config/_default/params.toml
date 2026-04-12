@@ -1,0 +1,6 @@
+mainSections = ["posts"]
+
+[homepage]
+layout = "page"
+showRecent = true
+recentLimit = 6
