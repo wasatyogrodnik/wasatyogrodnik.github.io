@@ -1,0 +1,10 @@
+# Hugo generated files
+/public/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+# Optional local/editor files
+.vscode/
+.DS_Store
+Thumbs.db
