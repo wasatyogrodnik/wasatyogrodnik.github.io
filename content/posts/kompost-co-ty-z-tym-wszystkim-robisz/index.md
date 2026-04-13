@@ -2,9 +2,15 @@
 title: "A co Ty z tym wszystkim robisz? Czyli jak śmieci zamieniają się w złoto"
 date: 2026-04-12
 draft: false
+
+authors:
+  - rafal
+
 tags: ["kompost", "ROD", "nawożenie", "odpady zielone"]
 categories: ["poradnik"]
-feature: "feature.webp"
+
+description: "Prosty sposób, jak z odpadów z działki i kuchni zrobić wartościowy kompost – mniej śmieci, lepsza gleba i zdrowsze rośliny, bez zbędnej kombinacji."
+featured_image: "/posts/kompost-co-ty-z-tym-wszystkim-robisz/feature.webp"
 ---
 
 ## A co Ty z tym wszystkim robisz? Czyli jak śmieci zamieniają się w złoto

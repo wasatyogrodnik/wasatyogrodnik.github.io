@@ -1,0 +1,40 @@
+{{ with .Params.authors }}
+  {{ $authorKey := index . 0 }}
+  {{ $authorPath := printf "/authors/%s" ($authorKey | urlize) }}
+
+  {{ with $.Site.GetPage $authorPath }}
+    <section class="wo-author-box">
+      <div class="wo-author-box__inner">
+        {{ with .Params.avatar }}
+          <div class="wo-author-box__avatar-wrap">
+            <img
+              class="wo-author-box__avatar"
+              src="{{ . }}"
+              alt="{{ $.Title }}"
+            >
+          </div>
+        {{ end }}
+
+        <div class="wo-author-box__content">
+          <p class="wo-author-box__eyebrow">Autor</p>
+
+          <h2 class="wo-author-box__name">
+            <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
+          </h2>
+
+          {{ with .Params.headline }}
+            <p class="wo-author-box__headline">{{ . }}</p>
+          {{ end }}
+
+          {{ with .Params.bio }}
+            <p class="wo-author-box__bio">{{ . }}</p>
+          {{ end }}
+
+          <div class="wo-author-box__links">
+            <a class="wo-author-box__link" href="{{ .RelPermalink }}">Zobacz profil autora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

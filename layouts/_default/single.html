@@ -1,16 +1,36 @@
 {{ define "main" }}
-  <section class="wo-page wo-page--single">
-    <article class="wo-content-card">
-      <header class="wo-article-header">
-        <h1>{{ .Title }}</h1>
-        {{ if .Date }}
-          <p class="wo-article-meta">{{ .Date.Format "2 January 2006" }}</p>
-        {{ end }}
-      </header>
+  <section class="wo-page wo-page--single-shell wo-single">
+    <div class="wo-single-layout">
+      {{ partial "sidebar.html" . }}
 
-      <div class="wo-article-content">
-        {{ .Content }}
-      </div>
-    </article>
+      <main class="wo-single-main">
+        <article class="wo-content-card wo-single-card">
+          <div class="wo-single-inner">
+            <header class="wo-article-header">
+              <h1>{{ .Title }}</h1>
+
+              <div class="wo-article-meta">
+                {{ with .Date }}
+                  <span>{{ .Format "2 January 2006" }}</span>
+                {{ end }}
+              </div>
+            </header>
+
+            <div class="wo-article-content">
+              {{ .Content }}
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <aside class="wo-toc">
+        <div class="wo-toc__inner">
+          <h2>W tym wpisie</h2>
+          {{ .TableOfContents }}
+        </div>
+
+        {{ partial "author-box.html" . }}
+      </aside>
+    </div>
   </section>
 {{ end }}

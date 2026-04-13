@@ -1,0 +1,60 @@
+{{ define "main" }}
+  <section class="wo-page wo-page--with-sidebar">
+    <div class="wo-layout">
+      {{ partial "sidebar.html" . }}
+
+      <main class="wo-main">
+        <div class="wo-content-card wo-content-card--wide wo-author-page">
+          <div class="wo-author-page__inner">
+            <header class="wo-author-page__header">
+              {{ with .Params.avatar }}
+                <img class="wo-author-page__avatar" src="{{ . }}" alt="{{ $.Title }}">
+              {{ end }}
+
+              <div class="wo-author-page__intro">
+                <p class="wo-author-page__eyebrow">Autor</p>
+                <h1>{{ .Params.name | default .Title }}</h1>
+
+                {{ with .Params.headline }}
+                  <p class="wo-author-page__headline">{{ . }}</p>
+                {{ end }}
+
+                {{ with .Params.bio }}
+                  <p class="wo-author-page__bio">{{ . }}</p>
+                {{ end }}
+              </div>
+            </header>
+
+            <section class="wo-author-page__posts">
+              <h2>Wpisy autora</h2>
+
+              <div class="wo-post-list wo-post-list--minimal">
+                {{ range where site.RegularPages "Params.authors" "intersect" (slice .File.ContentBaseName) }}
+                  <article class="wo-post-row">
+                    <h3 class="wo-post-row__title">
+                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h3>
+
+                    <div class="wo-post-row__meta">
+                      {{ with .Date }}
+                        <span>{{ .Format "2 January 2006" }}</span>
+                      {{ end }}
+                    </div>
+
+                    {{ with .Params.description }}
+                      <p class="wo-post-row__summary">{{ . }}</p>
+                    {{ else }}
+                      {{ with .Summary }}
+                        <p class="wo-post-row__summary">{{ . | plainify | truncate 170 }}</p>
+                      {{ end }}
+                    {{ end }}
+                  </article>
+                {{ end }}
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,42 @@
+<aside class="wo-sidebar">
+  <section class="wo-sidebar-box">
+    <h2>O blogu</h2>
+    <p>O działce, kompoście, warzywach, ekologii i życiu, które kwitnie między grządkami a kocim nadzorem.</p>
+  </section>
+
+  {{ with site.Taxonomies.categories }}
+    <section class="wo-sidebar-box">
+      <h2>Kategorie</h2>
+      <ul class="wo-sidebar-list">
+        {{ range $name, $taxonomy := . }}
+          <li>
+            <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/">
+              {{ $name }} <span>({{ len $taxonomy }})</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
+  {{ with site.Taxonomies.tags }}
+    <section class="wo-sidebar-box">
+      <h2>Tagi</h2>
+      <div class="wo-sidebar-tags">
+        {{ range $name, $taxonomy := . }}
+          <a class="wo-tag" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/">
+            {{ $name }}
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  <section class="wo-sidebar-box">
+    <h2>Facebook</h2>
+    <p>Znajdziesz mnie też poza blogiem.</p>
+    <a class="wo-sidebar-btn" href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+      Zobacz profil
+    </a>
+  </section>
+</aside>
