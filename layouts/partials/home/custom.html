@@ -2,9 +2,9 @@
 
 <section class="wo-hero">
   <div class="wo-hero__overlay">
-    <img src="/images/branding/logo-wasaty-ogrodnik-full.png" alt="Wąsaty Ogrodnik" class="wo-logo">
-    <h1 class="wo-hero__title">Wąsaty Ogrodnik</h1>
-    <p class="wo-hero__tagline">Wpisy z działki wąsatego ogrodnika</p>
+    <h1 class="wo-hero__title">{{ .Site.Params.hero.title }}</h1>
+    <p class="wo-hero__tagline">{{ .Site.Params.hero.lead }}</p>
+    <p class="wo-hero__desc">{{ .Site.Params.hero.desc }}</p>
   </div>
 </section>
 
@@ -13,13 +13,13 @@
     <img src="/images/branding/avatar-wasaty-ogrodnik.png" alt="Avatar Wąsatego Ogrodnika" class="wo-avatar">
     <div>
       <h2>O blogu</h2>
-      <p>O działce, kompoście, warzywach, ogrodzie i codziennym życiu między grządką a konewką.</p>
+      <p>O działce, kompoście, warzywach, ekologii i życiu, które kwitnie między grządkami pod kocim nadzorem.</p>
     </div>
   </div>
 </section>
 
 <section class="wo-home-posts">
-  <h2>Ostatnie z grządki</h2>
+  <h2>Co w trawie piszczy</h2>
   <div class="wo-card-grid">
     {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
       <article class="wo-post-card">

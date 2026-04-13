@@ -4,3 +4,8 @@ mainSections = ["posts"]
   layout = "custom"
   showRecent = true
   recentLimit = 6
+
+[hero]
+  title = "Wąsaty Ogrodnik"
+  lead = "Między grządką, konewką i kocim spojrzeniem"
+  desc = "O ogrodzie, roślinach i tej cichej radości, którą daje własna działka."
