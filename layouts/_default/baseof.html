@@ -3,13 +3,6 @@
   <head>
     {{ partial "head.html" . }}
     {{ partial "extended-head.html" . }}
-    <title>
-      {{ if .IsHome }}
-        {{ .Site.Title }}
-      {{ else }}
-        {{ .Title }} | {{ .Site.Title }}
-      {{ end }}
-    </title>
   </head>
   <body class="wo-body">
     <header class="wo-header">
