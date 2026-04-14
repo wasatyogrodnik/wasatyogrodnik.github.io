@@ -11,7 +11,7 @@
   --wo-shadow-soft: 0 12px 30px rgba(93, 78, 58, 0.08);
   --wo-radius: 20px;
   --wo-content-width: 1600px;
-  --wo-reading-width: 82ch;
+  --wo-reading-width: 72ch;
   --wo-image-width: 96ch;
   --wo-sidebar-width: 280px;
   --wo-toc-width: 240px;
@@ -416,6 +416,7 @@ cite {
   font-weight: 700;
 }
 
+/* lista wpisów - baza */
 .wo-post-list--minimal {
   max-width: var(--wo-reading-width);
   margin: 0 auto;
@@ -459,6 +460,22 @@ cite {
   color: var(--wo-text);
 }
 
+/* lista wpisów z latami */
+.wo-post-year-group {
+  max-width: var(--wo-reading-width);
+  margin: 0 auto 2.25rem;
+}
+
+.wo-post-year-heading {
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(139, 115, 85, 0.16);
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  line-height: 1.15;
+  color: var(--wo-brown);
+}
+
 /* POSTS PAGE – miniaturka przy tytule */
 
 .wo-post-list--with-thumb {
@@ -488,7 +505,7 @@ cite {
   min-width: 0;
 }
 
-/* SINGLE PAGE – 3 KOLUMNY */
+/* SINGLE PAGE */
 
 .wo-page--single-shell {
   max-width: 100%;
@@ -526,7 +543,7 @@ cite {
 .wo-article-header h1 {
   color: var(--wo-brown);
   margin: 0 0 0.5rem;
-  font-size: 2.55rem;
+  font-size: 2.45rem;
   line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -536,146 +553,79 @@ cite {
 .wo-article-meta {
   max-width: var(--wo-reading-width);
   margin: 0 auto 1rem;
-  font-family: 'Lato', sans-serif;
   color: var(--wo-text);
   opacity: 0.8;
   font-size: 0.95rem;
   font-style: italic;
 }
 
-/* TREŚĆ ARTYKUŁU */
+/* TREŚĆ ARTYKUŁU – uproszczona wersja GPT */
 
 .wo-single .wo-article-content {
   max-width: var(--wo-reading-width);
-  margin-left: auto;
-  margin-right: auto;
-  font-optical-sizing: auto;
+  margin: 0 auto;
 }
 
 .wo-single .wo-article-content > * {
-  max-width: var(--wo-reading-width);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
-
-.wo-single .wo-article-content h1,
-.wo-single .wo-article-content h2,
-.wo-single .wo-article-content h3,
-.wo-single .wo-article-content h4,
-.wo-single .wo-article-content h5,
-.wo-single .wo-article-content h6,
-.wo-single .wo-article-content p,
-.wo-single .wo-article-content ul,
-.wo-single .wo-article-content ol,
-.wo-single .wo-article-content blockquote,
-.wo-single .wo-article-content pre,
-.wo-single .wo-article-content table,
-.wo-single .wo-article-content dl {
-  max-width: var(--wo-reading-width);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  transform: none;
   box-sizing: border-box;
 }
 
 .wo-single .wo-article-content h2,
 .wo-single .wo-article-content h3 {
-  position: relative;
-  font-optical-sizing: auto;
+  font-family: 'Lora', serif;
+  color: var(--wo-brown);
   text-wrap: balance;
 }
 
 .wo-single .wo-article-content h2 {
-  margin-top: 2rem;
-  margin-bottom: 0.65rem;
-  font-size: 1.82rem;
+  margin: 2rem 0 0.7rem;
+  font-size: 1.7rem;
+  line-height: 1.15;
   font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.012em;
-  color: var(--wo-brown);
-  font-family: 'Lora', serif;
+  letter-spacing: -0.01em;
 }
 
 .wo-single .wo-article-content h3 {
-  margin-top: 1.55rem;
-  margin-bottom: 0.55rem;
-  font-size: 1.2rem;
+  margin: 1.5rem 0 0.55rem;
+  font-size: 1.18rem;
+  line-height: 1.2;
   font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.006em;
-  color: var(--wo-brown);
-  font-family: 'Lora', serif;
 }
 
 .wo-single .wo-article-content p,
 .wo-single .wo-article-content ul,
 .wo-single .wo-article-content ol,
 .wo-single .wo-article-content blockquote {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   font-size: 1.04rem;
   line-height: 1.78;
 }
 
 .wo-single .wo-article-content ul,
 .wo-single .wo-article-content ol {
-  padding-left: 1.3rem;
+  padding-left: 1.25rem;
 }
 
 .wo-single .wo-article-content li + li {
   margin-top: 0.35rem;
 }
 
-/* ANCHORY W NAGŁÓWKACH */
-
-.wo-single .wo-article-content h2 a,
-.wo-single .wo-article-content h3 a,
-.wo-single .wo-article-content h4 a {
-  text-decoration: none;
-}
-
-.wo-single .wo-article-content h2 a:first-child,
-.wo-single .wo-article-content h3 a:first-child,
-.wo-single .wo-article-content h4 a:first-child {
-  display: inline-block;
-  margin-right: 0.28em;
-  opacity: 0.58;
-  font-size: 0.82em;
-  line-height: 1;
-  vertical-align: baseline;
-}
-
-.wo-single .wo-article-content h2 a:first-child:hover,
-.wo-single .wo-article-content h3 a:first-child:hover,
-.wo-single .wo-article-content h4 a:first-child:hover {
-  opacity: 1;
-  color: var(--wo-rust);
-}
-
-/* MEDIA W TREŚCI */
-
-.wo-single .wo-article-content figure,
-.wo-single .wo-article-content picture,
-.wo-single .wo-article-content img {
-  max-width: var(--wo-image-width);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .wo-single .wo-article-content img {
   display: block;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 16px;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin: 1.25rem auto;
+  border-radius: 12px;
 }
 
 .wo-single .wo-article-content figure {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  max-width: var(--wo-image-width);
+  margin: 1.25rem auto;
 }
 
 .wo-single .wo-article-content figure img {
@@ -684,13 +634,31 @@ cite {
 }
 
 .wo-single .wo-article-content figure figcaption {
-  max-width: var(--wo-reading-width);
   margin-top: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 0.95rem;
   color: var(--wo-brown);
   opacity: 0.85;
+  text-align: center;
+}
+
+/* Anchory przy nagłówkach */
+
+.wo-single .wo-article-content h2 a,
+.wo-single .wo-article-content h3 a {
+  text-decoration: none;
+}
+
+.wo-single .wo-article-content h2 a:first-child,
+.wo-single .wo-article-content h3 a:first-child {
+  margin-right: 0.22em;
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+.wo-single .wo-article-content h2 a:first-child:hover,
+.wo-single .wo-article-content h3 a:first-child:hover {
+  opacity: 1;
+  color: var(--wo-rust);
 }
 
 /* TOC */
@@ -1025,24 +993,9 @@ footer {
 
   .wo-list-header,
   .wo-post-list--minimal,
+  .wo-post-year-group,
   .wo-article-header,
   .wo-article-meta,
-  .wo-single .wo-article-content h1,
-  .wo-single .wo-article-content h2,
-  .wo-single .wo-article-content h3,
-  .wo-single .wo-article-content h4,
-  .wo-single .wo-article-content h5,
-  .wo-single .wo-article-content h6,
-  .wo-single .wo-article-content p,
-  .wo-single .wo-article-content ul,
-  .wo-single .wo-article-content ol,
-  .wo-single .wo-article-content blockquote,
-  .wo-single .wo-article-content pre,
-  .wo-single .wo-article-content table,
-  .wo-single .wo-article-content dl,
-  .wo-single .wo-article-content figure,
-  .wo-single .wo-article-content picture,
-  .wo-single .wo-article-content img,
   .wo-author-below {
     max-width: 100%;
   }
@@ -1055,22 +1008,28 @@ footer {
     font-size: 1.25rem;
   }
 
+  .wo-post-year-heading {
+    font-size: 1.5rem;
+  }
+
   .wo-article-header h1 {
     font-size: 2rem;
     line-height: 1.1;
   }
 
+  .wo-single .wo-article-content {
+    max-width: 100%;
+  }
+
   .wo-single .wo-article-content h2 {
-    font-size: 1.52rem;
-    line-height: 1.16;
+    font-size: 1.45rem;
     margin-top: 1.7rem;
     margin-bottom: 0.55rem;
   }
 
   .wo-single .wo-article-content h3 {
-    font-size: 1.12rem;
-    line-height: 1.2;
-    margin-top: 1.35rem;
+    font-size: 1.08rem;
+    margin-top: 1.3rem;
     margin-bottom: 0.45rem;
   }
 

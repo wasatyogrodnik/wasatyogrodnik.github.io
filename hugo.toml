@@ -1,6 +1,7 @@
 theme = "congo"
 baseURL = "https://wasatyogrodnik.github.io/"
 defaultContentLanguage = "pl"
+languageCode = "pl-PL"
 
 [outputs]
 home = ["HTML", "RSS"]

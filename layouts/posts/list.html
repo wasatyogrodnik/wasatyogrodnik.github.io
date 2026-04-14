@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <section class="wo-page wo-page--with-sidebar wo-posts-page">
+    <div class="wo-layout">
+      {{ partial "sidebar.html" . }}
+
+      <main class="wo-main">
+        <article class="wo-content-card wo-content-card--wide">
+          <header class="wo-list-header">
+            <h1>Co w trawie piszczy</h1>
+          </header>
+
+          {{ range .Pages.GroupByDate "2006" }}
+            <section class="wo-post-year-group">
+              <h2 class="wo-post-year-heading">{{ .Key }}</h2>
+
+              <div class="wo-post-list wo-post-list--minimal wo-post-list--with-thumb">
+                {{ range .Pages }}
+                  {{ $post := . }}
+                  <article class="wo-post-row wo-post-row--with-thumb">
+                    {{ with $post.Params.featured_image }}
+                      <a class="wo-post-row__thumb" href="{{ $post.RelPermalink }}">
+                        <img src="{{ . }}" alt="{{ $post.Title }}">
+                      </a>
+                    {{ end }}
+
+                    <div class="wo-post-row__body">
+                      <h3 class="wo-post-row__title">
+                        <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+                      </h3>
+
+                      <div class="wo-post-row__meta">
+                        {{ with $post.PublishDate }}
+                          <span>{{ time.Format ":date_long" . }}</span>
+                        {{ else }}
+                          {{ with $post.Date }}
+                            <span>{{ time.Format ":date_long" . }}</span>
+                          {{ end }}
+                        {{ end }}
+                      </div>
+
+                      {{ with $post.Params.description }}
+                        <p class="wo-post-row__summary">{{ . }}</p>
+                      {{ else }}
+                        {{ with $post.Summary }}
+                          <p class="wo-post-row__summary">{{ . | plainify | truncate 170 }}</p>
+                        {{ end }}
+                      {{ end }}
+                    </div>
+                  </article>
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+        </article>
+      </main>
+    </div>
+  </section>
+{{ end }}

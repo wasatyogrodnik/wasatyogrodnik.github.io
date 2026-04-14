@@ -10,8 +10,12 @@
               <h1>{{ .Title }}</h1>
 
               <div class="wo-article-meta">
-                {{ with .Date }}
-                  <span>{{ .Format "2 January 2006" }}</span>
+                {{ with .PublishDate }}
+                  <span>{{ time.Format ":date_long" . }}</span>
+                {{ else }}
+                  {{ with .Date }}
+                    <span>{{ time.Format ":date_long" . }}</span>
+                  {{ end }}
                 {{ end }}
               </div>
             </header>
