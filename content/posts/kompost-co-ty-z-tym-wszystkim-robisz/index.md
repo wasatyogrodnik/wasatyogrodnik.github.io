@@ -8,7 +8,7 @@ authors:
 
 tags: ["kompost", "ROD", "nawożenie", "odpady zielone"]
 categories: ["poradnik"]
-
+summary: "Jak ogarnąć kompost na działce w praktyce."
 description: "Prosty sposób, jak z odpadów z działki i kuchni zrobić wartościowy kompost – mniej śmieci, lepsza gleba i zdrowsze rośliny, bez zbędnej kombinacji."
 featured_image: "/posts/kompost-co-ty-z-tym-wszystkim-robisz/feature.webp"
 ---

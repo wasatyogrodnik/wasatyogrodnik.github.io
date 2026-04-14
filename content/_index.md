@@ -1,7 +1,9 @@
 ---
 title: "Wąsaty Ogrodnik"
-description: "Blog o działce, kompoście, uprawie i zwykłym ogrodniczym kombinowaniu."
+description: "Wąsaty Ogrodnik to blog o działce, kompoście, uprawie warzyw, drzewach owocowych i ogrodniczym kombinowaniu. Praktyczne porady, własne doświadczenia i życie działkowca."
+summary: "Blog o działce, kompoście, warzywach, owocach i codziennym życiu ogrodnika działkowego."
 ---
+
 
 # Wąsaty Ogrodnik
 

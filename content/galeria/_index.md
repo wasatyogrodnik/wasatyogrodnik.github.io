@@ -1,6 +1,7 @@
 ---
-title: "Galeria"
-date: 2026-04-12
+title: "Galeria ogrodu i działki"
+description: "Zdjęcia z działki, ogrodu, warzyw, kwiatów, drzew owocowych i codziennego życia Wąsatego Ogrodnika. Galeria sezonu i ogrodniczych obserwacji."
+summary: "Galeria zdjęć z działki i ogrodu."
 draft: false
 ---
 
