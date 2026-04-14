@@ -1,5 +1,5 @@
 ---
-title: "Wąsaty Ogrodnik"
+title: "Wąsaty Ogrodnik – blog o działce, uprawie ekologicznej i ROD Urbanowskiej w Koninie"
 description: "Wąsaty Ogrodnik to blog o działce, kompoście, uprawie warzyw, drzewach owocowych i ogrodniczym kombinowaniu. Praktyczne porady, własne doświadczenia i życie działkowca."
 summary: "Blog o działce, kompoście, warzywach, owocach i codziennym życiu ogrodnika działkowego."
 ---
