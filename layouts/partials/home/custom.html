@@ -1,5 +1,3 @@
-
-
 <section class="wo-hero">
   <div class="wo-hero__overlay">
     <h1 class="wo-hero__title">{{ .Site.Params.hero.title }}</h1>
@@ -12,14 +10,41 @@
   <h2>Co w trawie piszczy</h2>
   <div class="wo-card-grid">
     {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+      {{ $post := . }}
+
       <article class="wo-post-card">
-        <a href="{{ .RelPermalink }}">
-          <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ .Title }}" class="wo-post-card__thumb">
-        </a>
+        {{ with $post.Params.featured_image }}
+          <a href="{{ $post.RelPermalink }}">
+            <img src="{{ . }}" alt="{{ $post.Title }}" class="wo-post-card__thumb">
+          </a>
+        {{ else }}
+          <a href="{{ $post.RelPermalink }}">
+            <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ $post.Title }}" class="wo-post-card__thumb">
+          </a>
+        {{ end }}
+
         <div class="wo-post-card__body">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p class="wo-post-card__meta">{{ .Date.Format "2 January 2006" }}</p>
-          <p>{{ .Summary | plainify | truncate 140 }}</p>
+          <h3>
+            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+          </h3>
+
+          <p class="wo-post-card__meta">
+            {{ with $post.PublishDate }}
+              {{ time.Format ":date_long" . }}
+            {{ else }}
+              {{ with $post.Date }}
+                {{ time.Format ":date_long" . }}
+              {{ end }}
+            {{ end }}
+          </p>
+
+          {{ with $post.Params.description }}
+            <p>{{ . }}</p>
+          {{ else }}
+            {{ with $post.Summary }}
+              <p>{{ . | plainify | truncate 140 }}</p>
+            {{ end }}
+          {{ end }}
         </div>
       </article>
     {{ end }}
