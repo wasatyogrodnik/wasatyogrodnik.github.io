@@ -14,26 +14,8 @@ git status
 git log --oneline -n 3
 git remote -v
 
-Co pokażą
-git status — czy katalog jest czysty i na jakiej jesteś gałęzi; często pokaże też, czy branch jest zsynchronizowany z remote.
+git add . && git commit -m "Poprawa widoku single i custom CSS" && git push origin main && git status && git log --oneline -n 3 && git remote -v
 
-git log --oneline -n 3 — ostatnie 3 commity w krótkiej formie, żeby potwierdzić, że właściwy commit poszedł.
-
-git remote -v — adres repozytorium do fetch/push, więc od razu widzisz, czy pchasz tam gdzie trzeba.
-
-Jak chcesz pełniejszą kontrolę
-Możesz też użyć takiego „pakietu kontrolnego”:
-
-bash
-git status && git branch -v && git log --oneline -n 5 && git remote -v
-git branch -v pokaże aktualną gałąź i jej ostatni commit, co jest wygodne przy szybkim sprawdzeniu przed lub po publikacji.
-
-Dla GitHub Pages po publikacji
-Jeśli push już poszedł, potem sprawdzasz:
-
-repo → Actions, czy workflow przeszedł,
-
-repo → Settings > Pages, czy deployment jest oznaczony jako aktywny. GitHub Pages i Hugo najczęściej właśnie tak raportują status publikacji
 git add .
 git commit -m "Poprawa widoku single i custom CSS"
 git push origin main
