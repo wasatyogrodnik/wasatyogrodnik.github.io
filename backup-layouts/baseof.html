@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    {{ partial "head.html" . }}
+    {{ partial "extended-head.html" . }}
+    <title>
+      {{ if .IsHome }}
+        {{ .Site.Title }}
+      {{ else }}
+        {{ .Title }} | {{ .Site.Title }}
+      {{ end }}
+    </title>
+  </head>
+  <body class="wo-body">
+    <header class="wo-header">
+      <div class="wo-header__inner">
+        <a href="{{ "/" | relURL }}" class="wo-header__brand">
+          <img src="/images/branding/logo-wo-mustache-mark.png" alt="Wąsaty Ogrodnik" class="wo-header__brand-icon">
+          <span class="wo-header__brand-text">Wąsaty Ogrodnik</span>
+        </a>
+
+        <nav class="wo-nav" aria-label="Główne menu">
+          <a href="{{ "/" | relURL }}" class="wo-nav__link">
+            <img src="/images/ui/icon-start-dom-liscie.png" alt="" class="wo-nav__icon">
+            <span>Start</span>
+          </a>
+          <a href="{{ "/posts/" | relURL }}" class="wo-nav__link">
+            <img src="/images/ui/icon-blog-lopata-notes.png" alt="" class="wo-nav__icon">
+            <span>Blog</span>
+          </a>
+          <a href="{{ "/galeria/" | relURL }}" class="wo-nav__link">
+            <img src="/images/ui/icon-galeria-aparat-kwiat.png" alt="" class="wo-nav__icon">
+            <span>Galeria</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wo-page-shell">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>

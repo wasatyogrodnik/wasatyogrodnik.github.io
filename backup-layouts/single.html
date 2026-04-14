@@ -19,21 +19,17 @@
             <div class="wo-article-content">
               {{ .Content }}
             </div>
-
-            <!-- AUTHOR BOX POD WPISEM -->
-            <div class="wo-author-below">
-              {{ partial "author-box.html" . }}
-            </div>
           </div>
         </article>
       </main>
 
-      <!-- PRAWY BOK: TYLKO TOC (bez autora, bo jest już pod wpisem) -->
       <aside class="wo-toc">
         <div class="wo-toc__inner">
           <h2>W tym wpisie</h2>
           {{ .TableOfContents }}
         </div>
+
+        {{ partial "author-box.html" . }}
       </aside>
     </div>
   </section>
