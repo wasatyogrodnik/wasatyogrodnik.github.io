@@ -22,3 +22,7 @@ defaultTitle = "Wąsaty Ogrodnik"
 defaultDescription = "Wąsaty Ogrodnik to blog o działce, kompoście, uprawie warzyw, drzewach owocowych i codziennym życiu działkowca. Praktyczne porady, własne doświadczenia i ogrodnicze notatki."
 brandVariant = "Wasaty Ogrodnik"
 localArea = "ROD Urbanowskiej Konin"
+
+[services]
+  [services.googleAnalytics]
+    id = "G-67YRV0NB2R"
