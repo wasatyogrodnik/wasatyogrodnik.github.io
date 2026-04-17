@@ -6,47 +6,55 @@
   </div>
 </section>
 
-<section class="wo-home-posts">
-  <h2>Co w trawie piszczy</h2>
-  <div class="wo-card-grid">
-    {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-      {{ $post := . }}
+<div class="wo-page wo-page--with-sidebar">
+  <div class="wo-layout">
+    {{ partial "sidebar.html" . }}
 
-      <article class="wo-post-card">
-        {{ with $post.Params.featured_image }}
-          <a href="{{ $post.RelPermalink }}">
-            <img src="{{ . }}" alt="{{ $post.Title }}" class="wo-post-card__thumb">
-          </a>
-        {{ else }}
-          <a href="{{ $post.RelPermalink }}">
-            <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ $post.Title }}" class="wo-post-card__thumb">
-          </a>
-        {{ end }}
+    <main class="wo-main">
+      <section class="wo-home-posts">
+        <h2>Co w trawie piszczy</h2>
+        <div class="wo-card-grid">
+          {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+            {{ $post := . }}
 
-        <div class="wo-post-card__body">
-          <h3>
-            <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
-          </h3>
-
-          <p class="wo-post-card__meta">
-            {{ with $post.PublishDate }}
-              {{ time.Format ":date_long" . }}
-            {{ else }}
-              {{ with $post.Date }}
-                {{ time.Format ":date_long" . }}
+            <article class="wo-post-card">
+              {{ with $post.Params.featured_image }}
+                <a href="{{ $post.RelPermalink }}">
+                  <img src="{{ . }}" alt="{{ $post.Title }}" class="wo-post-card__thumb">
+                </a>
+              {{ else }}
+                <a href="{{ $post.RelPermalink }}">
+                  <img src="/images/posts/post-thumb-ogrod-ogolny-01.png" alt="{{ $post.Title }}" class="wo-post-card__thumb">
+                </a>
               {{ end }}
-            {{ end }}
-          </p>
 
-          {{ with $post.Params.description }}
-            <p>{{ . }}</p>
-          {{ else }}
-            {{ with $post.Summary }}
-              <p>{{ . | plainify | truncate 140 }}</p>
-            {{ end }}
+              <div class="wo-post-card__body">
+                <h3>
+                  <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+                </h3>
+
+                <p class="wo-post-card__meta">
+                  {{ with $post.PublishDate }}
+                    {{ time.Format ":date_long" . }}
+                  {{ else }}
+                    {{ with $post.Date }}
+                      {{ time.Format ":date_long" . }}
+                    {{ end }}
+                  {{ end }}
+                </p>
+
+                {{ with $post.Params.description }}
+                  <p>{{ . }}</p>
+                {{ else }}
+                  {{ with $post.Summary }}
+                    <p>{{ . | plainify | truncate 140 }}</p>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </article>
           {{ end }}
         </div>
-      </article>
-    {{ end }}
+      </section>
+    </main>
   </div>
-</section>
+</div>
