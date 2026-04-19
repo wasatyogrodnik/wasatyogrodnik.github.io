@@ -5,4 +5,7 @@ slug: "rafal"
 headline: "Wąsaty Ogrodnik"
 bio: "Rafał – działkowiec z zamiłowania, który lubi proste i skuteczne rozwiązania. Najlepiej czuje się tam, gdzie można coś zrobić własnymi rękami i zobaczyć efekt."
 avatar: "/images/author/rafal.webp"
+
+facebook: "https://www.facebook.com/profile.php?id=61572043272201"
+facebook_group: "https://www.facebook.com/groups/wasatyogrodnik"
 ---
