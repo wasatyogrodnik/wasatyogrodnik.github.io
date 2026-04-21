@@ -1,5 +1,5 @@
 ---
-title: "A co i kiedy pryskać na działce? Prosty kalendarz dla normalnych ludzi"
+title: "A co i kiedy pryskać na działce? Prosty kalendarz dla amatora"
 date: 2026-04-21
 draft: false
 
@@ -7,14 +7,14 @@ authors:
   - rafal
 
 tags: ["opryski", "ochrona roślin", "jabłonie", "truskawki", "winorośl", "działka"]
-categories: ["ochrona roślin"]
+categories: ["poradnik"]
 
 summary: "Kiedy naprawdę warto pryskać na działce, a kiedy lepiej odpuścić – drzewa, truskawki, winorośl i trawnik w jednym prostym kalendarzu."
 description: "Konkretna ściąga: kiedy i co pryskać na działce – jabłonie, wiśnie, śliwy, winorośl, truskawki i trawnik. Bez przesady, bez chemii na zapas, z głową."
 featured_image: "/posts/opryski-kalendarz/feature.webp"
 ---
 
-Powiem Ci wprost — największy błąd działkowców to próba ogarnięcia wszystkiego naraz.
+Powiem wprost — największy błąd działkowców to próba ogarnięcia wszystkiego naraz.
 
 Każdy coś doradzi. Każdy ma „złoty środek”. A potem stoisz z opryskiwaczem i nie wiesz: **lać czy czekać**?
 
